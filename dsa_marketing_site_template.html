@@ -1,0 +1,321 @@
+<!--
+DSA & Marketing Single-file Website Template
+Filename: DSA_Marketing_Site_Template.html
+How to use:
+1. Open this file in a browser to preview.
+2. Edit the content in any code editor (VS Code, Notepad++, or even a plain text editor).
+3. To publish for free: push this file to GitHub and enable GitHub Pages on the repository (or drag-drop to Netlify).
+
+Sections included:
+- Header / Nav
+- Home / Hero
+- Services (DSA / Loan help, Marketing)
+- EMI Calculator (instant calculation)
+- Loan Planner / Amortization schedule (downloadable CSV)
+- Contact form (mailto + whatsapp link template)
+- Footer
+
+Notes for customization:
+- Search for "<!-- EDIT -->" comments to find content you should change.
+- Styling is basic, inside <style> at top; change colors and fonts there.
+- All JavaScript is at the bottom. Replace or expand functions as needed.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capital Compass — DSA & Marketing</title>
+  <meta name="description" content="Direct Selling Agent (DSA) & Marketing services — EMI calculator and loan planner included." />
+  <style>
+    :root{--accent:#0b6efd;--muted:#6b7280;--bg:#f7fafc}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#111;background:var(--bg)}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{background:#fff;padding:18px 0;border-bottom:1px solid #e6e9ee}
+    nav{display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;color:var(--accent)}
+    .nav-links a{margin-left:14px;color:#374151;text-decoration:none}
+    .hero{display:flex;gap:24px;align-items:center;padding:48px 0}
+    .hero-left{flex:1}
+    .hero-right{width:420px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    h1{font-size:28px;margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 4px 12px rgba(15,23,42,0.04)}
+    .section{margin:34px 0}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee}
+    .row{display:flex;gap:12px}
+    .row > *{flex:1}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left;font-size:13px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{padding:18px 0;color:var(--muted);text-align:center}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}.hero-right{width:100%}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <span class="brand">Capital Compass</span>
+          <span class="small" style="margin-left:8px;color:var(--muted)">DSA & Marketing</span>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#emi">EMI Calculator</a>
+          <a href="#planner">Loan Planner</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1><!-- EDIT: Headline -->Professional DSA & Marketing Services — Loan Guidance Made Simple</h1>
+        <p class="lead">We help customers get the right loans and brands scale through performance marketing. Use our free EMI calculator and loan planner to estimate costs instantly.</p>
+        <a class="btn" href="#emi">Try EMI Calculator</a>
+
+        <div class="section">
+          <h3>Why choose us?</h3>
+          <div class="grid">
+            <div class="card">
+              <strong>Transparent Loan Assistance</strong>
+              <p class="small">We work with multiple lenders and present clear options to customers without hidden fees.</p>
+            </div>
+            <div class="card">
+              <strong>Performance Marketing</strong>
+              <p class="small">Paid ads, organic growth, and creative that converts — tailored for e-commerce and financial services.</p>
+            </div>
+            <div class="card">
+              <strong>Free Tools</strong>
+              <p class="small">EMI calculator and loan planner you can use or embed on your site for free.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <h3 style="margin-top:0">Quick Contact</h3>
+        <p class="small">Send us a WhatsApp message or email and we’ll get back within business hours.</p>
+        <!-- EDIT: Replace phone/email -->
+        <p style="margin:10px 0"><strong>Phone:</strong> <a href="https://wa.me/91XXXXXXXXXX">+91 XXXXXXXXXX (WhatsApp)</a></p>
+        <p style="margin:10px 0"><strong>Email:</strong> <a href="mailto:info@capitalcompass.example">info@capitalcompass.example</a></p>
+        <a class="btn" href="#contact">Contact Us</a>
+      </aside>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Loan Assistance (DSA)</h4>
+          <p class="small">Personal loans, Home loans, Business loans — we guide application, documentation and lender comparison.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Performance Marketing</h4>
+          <p class="small">Ads strategy, social media campaigns, influencer tie-ups, and analytics-driven growth.</p>
+        </div>
+        <div class="card">
+          <h4>White-label Tools</h4>
+          <p class="small">Embed our calculators on your website and improve lead conversion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="emi" class="section">
+      <h2>EMI Calculator</h2>
+      <div class="card">
+        <div style="display:grid;gap:10px">
+          <label>Loan Type</label>
+          <select id="loanType">
+            <option value="personal">Personal Loan</option>
+            <option value="home">Home Loan</option>
+            <option value="auto">Auto Loan</option>
+            <option value="business">Business Loan</option>
+          </select>
+
+          <label>Loan Amount (₹)</label>
+          <input id="loanAmount" type="number" value="500000" />
+
+          <div class="row">
+            <div>
+              <label>Interest Rate (annual %)</label>
+              <input id="interestRate" type="number" step="0.01" value="10" />
+            </div>
+            <div>
+              <label>Tenure (years)</label>
+              <input id="tenureYears" type="number" step="1" value="3" />
+            </div>
+          </div>
+
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" id="calcBtn">Calculate EMI</button>
+            <button id="resetBtn" style="background:#e6edf9;color:var(--accent);border-radius:8px;padding:10px;border:0">Reset</button>
+          </div>
+
+          <div id="emiResult" style="margin-top:12px"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="planner" class="section">
+      <h2>Loan Planner & Amortization Schedule</h2>
+      <div class="card">
+        <p class="small">After calculating EMI, you can generate a full payment schedule and download it as CSV.</p>
+        <div id="plannerResult"></div>
+        <div style="margin-top:10px">
+          <button id="downloadCsv" class="btn" style="background:#10b981">Download Schedule (CSV)</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="small">Fill details below or use the email/WhatsApp link above.</p>
+        <form id="contactForm" onsubmit="handleContact(event)">
+          <label>Name</label>
+          <input id="c_name" required />
+          <label>Email</label>
+          <input id="c_email" type="email" required />
+          <label>Message</label>
+          <textarea id="c_message" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee" rows="4"></textarea>
+          <div style="margin-top:10px">
+            <button class="btn" type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Capital Compass — DSA & Marketing. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // EMI calculation function
+    function calculateEMI(principal, annualRate, years){
+      var r = annualRate/12/100; // monthly rate
+      var n = Math.round(years*12);
+      if(r === 0){
+        return {emi: principal/n, total: principal, interest:0, months: n};
+      }
+      var emi = principal * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+      var total = emi * n;
+      var interest = total - principal;
+      return {emi: emi, total: total, interest: interest, months: n};
+    }
+
+    // Render EMI result
+    function renderEMI(){
+      var amount = parseFloat(document.getElementById('loanAmount').value) || 0;
+      var rate = parseFloat(document.getElementById('interestRate').value) || 0;
+      var years = parseFloat(document.getElementById('tenureYears').value) || 0;
+      var loanType = document.getElementById('loanType').value;
+      var res = calculateEMI(amount, rate, years);
+      var container = document.getElementById('emiResult');
+      container.innerHTML = '';
+      var html = '<div style="display:flex;gap:12px;flex-wrap:wrap">'
+        + '<div class="card" style="flex:1;padding:12px">'
+        + '<strong>Monthly EMI</strong><div style="font-size:20px;margin-top:6px">₹'+res.emi.toFixed(0)+'</div>'
+        + '</div>'
+        + '<div class="card" style="flex:1;padding:12px">'
+        + '<strong>Total Interest</strong><div style="margin-top:6px">₹'+res.interest.toFixed(0)+'</div>'
+        + '</div>'
+        + '<div class="card" style="flex:1;padding:12px">'
+        + '<strong>Total Payment</strong><div style="margin-top:6px">₹'+res.total.toFixed(0)+'</div>'
+        + '</div>'
+        + '</div>';
+      container.innerHTML = html;
+
+      // prepare amortization schedule for planner
+      window.latestSchedule = generateSchedule(amount, rate, years);
+      renderSchedulePreview(window.latestSchedule);
+    }
+
+    // generate amortization schedule array
+    function generateSchedule(principal, annualRate, years){
+      var r = annualRate/12/100;
+      var n = Math.round(years*12);
+      var res = calculateEMI(principal, annualRate, years);
+      var emi = res.emi;
+      var balance = principal;
+      var schedule = [];
+      for(var i=1;i<=n;i++){
+        var interest = balance * r;
+        var principalPaid = emi - interest;
+        if(i===n){ // final adjustment
+          principalPaid = balance;
+          emi = principalPaid + interest;
+        }
+        balance = Math.max(0, balance - principalPaid);
+        schedule.push({month: i, emi: emi, principal: principalPaid, interest: interest, balance: balance});
+      }
+      return schedule;
+    }
+
+    function renderSchedulePreview(schedule){
+      var container = document.getElementById('plannerResult');
+      if(!schedule || schedule.length===0){container.innerHTML=''; return}
+      var html = '<div style="overflow:auto"><table><thead><tr><th>Month</th><th>EMI</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead><tbody>';
+      var upto = Math.min(schedule.length, 6); // show first 6 months as preview
+      for(var i=0;i<upto;i++){
+        var s = schedule[i];
+        html += '<tr><td>'+s.month+'</td><td>₹'+s.emi.toFixed(0)+'</td><td>₹'+s.principal.toFixed(0)+'</td><td>₹'+s.interest.toFixed(0)+'</td><td>₹'+s.balance.toFixed(0)+'</td></tr>';
+      }
+      html += '</tbody></table></div>';
+      html += '<p class="small">Showing first '+upto+' months. Click download to get full CSV.</p>';
+      container.innerHTML = html;
+    }
+
+    // Download CSV helper
+    function downloadCSV(schedule){
+      if(!schedule) return;
+      var rows = [['Month','EMI','Principal','Interest','Balance']];
+      schedule.forEach(function(r){rows.push([r.month, r.emi.toFixed(2), r.principal.toFixed(2), r.interest.toFixed(2), r.balance.toFixed(2)])});
+      var csv = rows.map(function(r){return r.join(',')}).join('\n');
+      var blob = new Blob([csv], {type: 'text/csv'});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'amortization_schedule.csv';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // Event listeners
+    document.getElementById('calcBtn').addEventListener('click', function(){ renderEMI(); });
+    document.getElementById('resetBtn').addEventListener('click', function(){ document.getElementById('loanAmount').value=500000; document.getElementById('interestRate').value=10; document.getElementById('tenureYears').value=3; renderEMI(); });
+    document.getElementById('downloadCsv').addEventListener('click', function(){ downloadCSV(window.latestSchedule); });
+
+    // Contact form handler - simple mailto fallback
+    function handleContact(e){
+      e.preventDefault();
+      var name = document.getElementById('c_name').value;
+      var email = document.getElementById('c_email').value;
+      var msg = document.getElementById('c_message').value;
+      var subject = encodeURIComponent('Website inquiry from '+name);
+      var body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nMessage:\n'+msg);
+      window.location.href = 'mailto:info@capitalcompass.example?subject='+subject+'&body='+body;
+    }
+
+    // initial render
+    renderEMI();
+  </script>
+</body>
+</html>
